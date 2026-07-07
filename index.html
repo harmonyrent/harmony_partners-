@@ -73,10 +73,11 @@ header{background:#fff;border-bottom:1px solid #e8edf5;padding:14px 28px;display
 .bubble-text{font-size:14px;color:#191f2e;line-height:1.75}
 .bubble-tip{font-size:12px;color:#1565c0;margin-top:8px;padding-top:8px;border-top:1px solid #dce8fa;font-style:italic}
 .info-table{width:100%;border-collapse:collapse;font-size:13px;border-radius:12px;overflow:hidden}
-.info-table th{text-align:left;padding:10px 12px;background:#f0f4fc;color:#1565c0;font-weight:700;font-size:12px;border-bottom:2px solid #dce8fa}
-.info-table td{padding:10px 12px;border-bottom:1px solid #f0f4fc;color:#191f2e;vertical-align:top;white-space:pre-line}
-.info-table tr:last-child td{border-bottom:none}
+.info-table th{text-align:left;padding:10px 12px;background:#e7effb;color:#1565c0;font-weight:700;font-size:12px;border:1px solid #a9c6ec}
+.info-table td{padding:10px 12px;border:1px solid #cbdcf3;color:#191f2e;vertical-align:top;white-space:pre-line}
 .info-table tr:hover td{background:#f7f9ff}
+.info-table td.grp{vertical-align:middle;text-align:center;background:#f4f7fd;font-weight:700;color:#1565c0;white-space:normal}
+.info-table tr:hover td.grp{background:#eef3fc}
 .rule-row{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #f0f4fc;font-size:14px;color:#4a5570}
 .rule-row:last-child{border-bottom:none}
 .rule-ico{font-size:16px;flex-shrink:0;margin-top:1px}
@@ -163,7 +164,7 @@ const CATS=[
   {key:'faq',ico:'❓',name:'자주 묻는 질문',desc:'고객이 자주 물어보는 것'},
   {key:'process',ico:'⚙️',name:'계약 프로세스',desc:'계약 단계별 흐름'},
   {key:'sales',ico:'💰',name:'영업 노하우',desc:'실전 영업 전략 & 수수료'},
-  {key:'promo',ico:'🔥',name:'이달의 프로모션',desc:'6월 신차·중고차 특별 혜택'}
+  {key:'promo',ico:'🔥',name:'이달의 프로모션',desc:'7월 신차·중고차 특별 혜택'}
 ];
 
 const BC={car:'b-car',script:'b-script',product:'b-product',rule:'b-rule',faq:'b-faq',process:'b-process',sales:'b-sales',promo:'b-sales'};
@@ -551,20 +552,23 @@ const DATA=[
     ]}
   ]}},
 
-  // ── 이달의 프로모션 ──
-  {id:40,type:'promo',title:'[6월 프로모션 공지] 실전 영업 가이드',tags:['프로모션','6월','무보증','렌트료인하','할인','그랜저','벤츠'],desc:'6월 한정으로 진행되는 무보증 확대 및 대여료 할인 혜택입니다. 고객 상담 시 적극 활용하세요!',detail:{
-    table:{headers:['프로모션 내용','구분','상세 조건 및 혜택'],rows:[
-      ['1. 무보증 프로모션','[신차]','• 차종 : 아반떼\n• 대여료 : -1만 원 할인\n• 무보증 진행 시, 월 대여료 +4만 원\n• 6월 30일까지 진행 후 프로모션 종료'],
-      [' ','[중고]','• 차종 : 아반떼\n• 소득증빙 : 면제\n• 무보증 진행 시, 월 대여료 +4만 원\n• 6월 30일까지 진행 후 프로모션 종료'],
-      [' ','[중고 리스]','• 차종 : 리스 대상 전 차종\n• 대상 : PM / 촉탁직 전체 판매 가능 확대\n• 무보증 진행 시, 월 대여료 +4만 원\n• 6월 30일까지 진행 후 프로모션 종료'],
-      ['2. 대여료 할인 + 추가 수수료','[신차]','• 차종 : 아반떼\n• 대여료 : 1만 원 할인\n• 수수료 : 총 100만 원 지급 (단, 무보증은 해당 없음)\n• 기간 : ~ 6월 30일까지 한정'],
-      ['3. 그랜저 한정 특가','[신차]','• 차종 : 그랜저\n• 대여료 : 월 81만 원부터~\n• 수수료 : 총 130만 원 지급\n• 수량 한정 선착순 진행'],
-      ['4. 벤츠 대여료 인하','[중고]','• 차종 : 벤츠 E-Class (22년식 / 23년식)\n• 대여료 : 최대 30만 원 대여료 인하 (동반차 기준)\n• 수량 한정 선착순 진행']
+  // ── 7월 프로모션 ──
+  {id:40,type:'promo',title:'7월 프로모션 공지',tags:['프로모션','7월','대여료할인','수수료','하향조정','그랜저','아반떼','아이오닉','쏘렌토','쏘나타','GV70','팰리세이드','6&12렌트'],desc:'7월 한정 대여료 할인·하향조정, 수수료, 6&12렌트 5% 할인 혜택입니다. 고객 상담 시 적극 활용하세요!',detail:{
+    table:{headers:['프로모션 구분','구분','차종','혜택','기간'],rows:[
+      [{v:'대여료 /\n수수료 프로모션',rowspan:2,cls:'grp'},{v:'신차',rowspan:2,cls:'grp'},'아반떼','대여료 -1만원\n+ 수수료 총 100만원','~ 7/31'],
+      [null,null,'그랜저 26년형\n(블랙 한정)','보증금 100만원 · 대여료 81만원\n+ 수수료 총 130만원','재고 소진 시'],
+      [{v:'대여료\n하향조정',rowspan:6,cls:'grp'},{v:'신차',rowspan:4,cls:'grp'},'쏘나타 디엣지 LPi','대여료 약 -1.5만원 하향','—'],
+      [null,null,'쏘렌토 가솔린·디젤','대여료 최대 -3.5만원 하향\n(차량별 상이)','—'],
+      [null,null,'아이오닉 5·9','대여료 최대 -16만원 하향\n(차량별 상이)','—'],
+      [null,null,'GV70 26년형','대여료 -6만원 하향','—'],
+      [null,{v:'중고',cls:'grp'},'쏘나타·그랜저·팰리세이드','대여료 최대 -15만원 할인\n(차량별 상이)','~ 7/31'],
+      [null,{v:'중고매입리스',cls:'grp'},'대상 차량 전체','대여료 최대 -13만원 할인\n(차량별 상이)','~ 7/31'],
+      [{v:'6&12렌트\n대여료할인',cls:'grp'},{v:'중고',cls:'grp'},'6&12렌트 전차종','대여료 5% 할인\n(최대 10만원)','~ 7/31']
     ]},
     rules:[
-      {ico:'⚠️',text:'무보증 프로모션은 6월 30일(월) 접수 및 실행분까지 유효하므로 일정을 꼭 준수해 주세요.'},
-      {ico:'⚠️',text:'그랜저 한정 특가 및 벤츠 대여료 인하는 수량 한정 선착순으로 재고 소진 시 예고 없이 종료될 수 있습니다.'},
-      {ico:'⚠️',text:'아반떼 추가 수수료(100만 원)는 무보증 계약 건에는 적용되지 않아요.'}
+      {ico:'🚨',text:'모든 프로모션은 재고 상황에 따라 조기 종료될 수 있습니다.'},
+      {ico:'⚠️',text:'그랜저는 26년형 블랙 한정이며, 재고 소진 시 종료됩니다.'},
+      {ico:'⚠️',text:"'차량별 상이' 항목은 대여료 인하 폭이 차량마다 다르니 반드시 견적으로 확인하세요."}
     ]
   }}
 ];
@@ -606,7 +610,7 @@ function openPopup(id){
   document.getElementById('popup-title').textContent=d.title;
   let html=`<div class="popup-desc">${d.desc}</div>`;
   if(d.detail.scenarios){d.detail.scenarios.forEach(s=>{html+=`<div class="block"><div class="block-label">${s.label}</div>`;s.scripts.forEach(sc=>{html+=`<div class="script-bubble ${sc.role==='cust'?'cust':''}"><div class="bubble-who ${sc.role==='cust'?'cust':''}">${sc.role==='rep'?'▶ 영업담당자':'고객'}</div><div class="bubble-text">${sc.text}</div>${sc.tip?`<div class="bubble-tip">💡 ${sc.tip}</div>`:''}</div>`});html+='</div>'});}
-  if(d.detail.table){html+=`<div class="block"><div class="block-label">한눈에 보기</div><table class="info-table"><tr>${d.detail.table.headers.map(h=>`<th>${h}</th>`).join('')}</tr>${d.detail.table.rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;}
+  if(d.detail.table){const t=d.detail.table;html+='<div class="block"><div class="block-label">한눈에 보기</div><table class="info-table"><tr>'+t.headers.map(h=>'<th>'+h+'</th>').join('')+'</tr>'+t.rows.map(r=>'<tr>'+r.map(c=>{if(c===null)return'';if(typeof c==='object')return'<td'+(c.rowspan?' rowspan="'+c.rowspan+'"':'')+(c.cls?' class="'+c.cls+'"':'')+'>'+c.v+'</td>';return'<td>'+c+'</td>'}).join('')+'</tr>').join('')+'</table></div>';}
   if(d.detail.rules){html+=`<div class="block"><div class="block-label">꼭 알아두세요</div>`;d.detail.rules.forEach(r=>{html+=`<div class="rule-row"><span class="rule-ico">${r.ico}</span><span>${r.text}</span></div>`});html+='</div>';}
   document.getElementById('popup-body').innerHTML=html;
   document.getElementById('overlay').classList.add('open');
