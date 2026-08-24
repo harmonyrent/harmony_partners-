@@ -75,9 +75,8 @@ header{background:#fff;border-bottom:1px solid #e8edf5;padding:14px 28px;display
 .info-table{width:100%;border-collapse:collapse;font-size:13px;border-radius:12px;overflow:hidden}
 .info-table th{text-align:left;padding:10px 12px;background:#e7effb;color:#1565c0;font-weight:700;font-size:12px;border:1px solid #a9c6ec}
 .info-table td{padding:10px 12px;border:1px solid #cbdcf3;color:#191f2e;vertical-align:top;white-space:pre-line}
-.info-table tr:hover td{background:#f7f9ff}
 .info-table td.grp{vertical-align:middle;text-align:center;background:#f4f7fd;font-weight:700;color:#1565c0;white-space:normal}
-.info-table tr:hover td.grp{background:#eef3fc}
+.info-table tr:hover td{background:#f7f9ff}
 .rule-row{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #f0f4fc;font-size:14px;color:#4a5570}
 .rule-row:last-child{border-bottom:none}
 .rule-ico{font-size:16px;flex-shrink:0;margin-top:1px}
@@ -164,7 +163,7 @@ const CATS=[
   {key:'faq',ico:'❓',name:'자주 묻는 질문',desc:'고객이 자주 물어보는 것'},
   {key:'process',ico:'⚙️',name:'계약 프로세스',desc:'계약 단계별 흐름'},
   {key:'sales',ico:'💰',name:'영업 노하우',desc:'실전 영업 전략 & 수수료'},
-  {key:'promo',ico:'🔥',name:'이달의 프로모션',desc:'7월 신차·중고차 특별 혜택'}
+  {key:'promo',ico:'🔥',name:'이달의 프로모션',desc:'8월 신차·중고차 특별 혜택'}
 ];
 
 const BC={car:'b-car',script:'b-script',product:'b-product',rule:'b-rule',faq:'b-faq',process:'b-process',sales:'b-sales',promo:'b-sales'};
@@ -552,23 +551,18 @@ const DATA=[
     ]}
   ]}},
 
-  // ── 7월 프로모션 ──
-  {id:40,type:'promo',title:'7월 프로모션 공지',tags:['프로모션','7월','대여료할인','수수료','하향조정','그랜저','아반떼','아이오닉','쏘렌토','쏘나타','GV70','팰리세이드','6&12렌트'],desc:'7월 한정 대여료 할인·하향조정, 수수료, 6&12렌트 5% 할인 혜택입니다. 고객 상담 시 적극 활용하세요!',detail:{
-    table:{headers:['프로모션 구분','구분','차종','혜택','기간'],rows:[
-      [{v:'대여료 /\n수수료 프로모션',rowspan:2,cls:'grp'},{v:'신차',rowspan:2,cls:'grp'},'아반떼','대여료 -1만원\n+ 수수료 총 100만원','~ 7/31'],
-      [null,null,'그랜저 26년형\n(블랙 한정)','보증금 100만원 · 대여료 81만원\n+ 수수료 총 130만원','재고 소진 시'],
-      [{v:'대여료\n하향조정',rowspan:6,cls:'grp'},{v:'신차',rowspan:4,cls:'grp'},'쏘나타 디엣지 LPi','대여료 약 -1.5만원 하향','—'],
-      [null,null,'쏘렌토 가솔린·디젤','대여료 최대 -3.5만원 하향\n(차량별 상이)','—'],
-      [null,null,'아이오닉 5·9','대여료 최대 -16만원 하향\n(차량별 상이)','—'],
-      [null,null,'GV70 26년형','대여료 -6만원 하향','—'],
-      [null,{v:'중고',cls:'grp'},'쏘나타·그랜저·팰리세이드','대여료 최대 -15만원 할인\n(차량별 상이)','~ 7/31'],
-      [null,{v:'중고매입리스',cls:'grp'},'대상 차량 전체','대여료 최대 -13만원 할인\n(차량별 상이)','~ 7/31'],
-      [{v:'6&12렌트\n대여료할인',cls:'grp'},{v:'중고',cls:'grp'},'6&12렌트 전차종','대여료 5% 할인\n(최대 10만원)','~ 7/31']
+  // ── 이달의 프로모션 ──
+  {id:40,type:'promo',title:'8월 프로모션 공지',tags:['프로모션','8월','수수료','대여료','하향조정','아반떼','그랜저','쏘나타','팰리세이드','G브랜드','신차','중고'],desc:'8월 수수료·대여료 프로모션 안내입니다. 고객 상담 시 적극 활용하세요!',detail:{
+    table:{headers:['프로모션 구분','구분','차종','혜택'],rows:[
+      [{v:'수수료 프로모션',rowspan:3,cls:'grp'},{v:'신차',rowspan:2,cls:'grp'},'아반떼','수수료 총 100만 원 지급'],
+      [null,null,'그랜저 (27년형)','수수료 총 150만 원 지급'],
+      [null,{v:'중고',cls:'grp'},'G브랜드','수수료: 월 대여료 금액과 동일하게 지급\n(기존 100만 원 정액 → 변경: 월 대여료 그대로 지급)'],
+      [{v:'대여료 하향조정',rowspan:2,cls:'grp'},{v:'신차',cls:'grp'},'쏘나타','대여료 약 4만 원 하향조정'],
+      [null,{v:'중고',cls:'grp'},'쏘나타·그랜저·팰리세이드','대여료 하향조정 (차종별 상이)']
     ]},
     rules:[
       {ico:'🚨',text:'모든 프로모션은 재고 상황에 따라 조기 종료될 수 있습니다.'},
-      {ico:'⚠️',text:'그랜저는 26년형 블랙 한정이며, 재고 소진 시 종료됩니다.'},
-      {ico:'⚠️',text:"'차량별 상이' 항목은 대여료 인하 폭이 차량마다 다르니 반드시 견적으로 확인하세요."}
+      {ico:'🚫',text:'추가수수료 지급은 종료되었습니다. (지급되지 않음)'}
     ]
   }}
 ];
